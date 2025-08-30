@@ -46,14 +46,14 @@ return (
           name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <div className="shad-form-item">
+                <FormLabel className="shad-form-label">Full Name</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Enter your full name" className="shad-input" {...field} />
               </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
-              <FormMessage />
+              </div>
+
+              <FormMessage className="shad-form-message" />
             </FormItem>
           )}
         />}
