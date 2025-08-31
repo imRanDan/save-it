@@ -57,6 +57,23 @@ return (
             </FormItem>
           )}
         />}
+
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <div className="shad-form-item">
+                <FormLabel className="shad-form-label">Email</FormLabel>
+              <FormControl>
+                <Input placeholder="Enter your email" className="shad-input" {...field} />
+              </FormControl>
+              </div>
+
+              <FormMessage className="shad-form-message" />
+            </FormItem>
+          )}
+        />
         <Button type="submit">Submit</Button>
       </form>
     </Form>
