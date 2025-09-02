@@ -23,6 +23,8 @@ const formSchema = z.object({
 type FormType = 'sign-in' | 'sign-up'
 
 const AuthForm = ({ type}: { type: FormType}) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -74,7 +76,10 @@ return (
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" className="form-submit-button">
+            {type === "sign-in" ? "Sign In" : "Sign Up"}
+        </Button>
+
         // gotta add more parts of the form
       </form>
     </Form>
