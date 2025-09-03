@@ -31,6 +31,7 @@ const AuthForm = ({ type}: { type: FormType}) => {
         username: "",
     },
 })
+//more form stuff
 
 const onSubmit = async (values: z.infer<typeof formSchema>) => {
     console.log(values)
