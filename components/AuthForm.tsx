@@ -3,6 +3,7 @@
 import { z } from "zod"
 import {zodResolver} from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
+import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -77,8 +78,18 @@ return (
             </FormItem>
           )}
         />
-        <Button type="submit" className="form-submit-button">
+        <Button type="submit" className="form-submit-button" disabled={isLoading}>
             {type === "sign-in" ? "Sign In" : "Sign Up"}
+
+            {isLoading && (
+              <Image 
+                src="/assets/icons/loader.svg"  
+                alt="loader"
+                width={24}
+                height={24}
+                className="animate-sprint ml-2"
+                />
+            )}
         </Button>
 
         // gotta add more parts of the form
