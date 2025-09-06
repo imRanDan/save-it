@@ -41,6 +41,7 @@ const AuthForm = ({ type}: { type: FormType}) => {
         fullName: "",
         email: ""
     },
+    //e
 })
 //more form stuff
 
