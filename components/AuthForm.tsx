@@ -41,7 +41,7 @@ const AuthForm = ({ type}: { type: FormType}) => {
         fullName: "",
         email: ""
     },
-    //e
+    //working on appwrite db setup, will come back to this soon
 })
 //more form stuff
 
