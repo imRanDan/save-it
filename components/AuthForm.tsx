@@ -20,6 +20,7 @@ import { Input } from "@/components/ui/input"
 
 import Link from "next/link"
 import Image from "next/image"
+import OTPModal from "./OTPModal"
 
 
 type FormType = 'sign-in' | 'sign-up';
@@ -140,6 +141,11 @@ return (
       </form>
     </Form>
     {/* OTP Verification */}
+    {accountId && (
+        <OTPModal 
+          email={form.getValues('email')} 
+          accountId={accountId}/>
+        )}
         </>
 )
 
