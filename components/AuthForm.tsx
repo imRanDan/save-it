@@ -4,6 +4,7 @@ import { z } from "zod"
 import {zodResolver} from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { useState } from "react"
+import { createAccount } from "@/lib/actions/user.actions"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -66,7 +67,6 @@ const onSubmit = async (values: z.infer<typeof formSchema>) => {
 
 return (
     <>
-
         <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="auth-form">
         <h1 className="form-title">{type === "sign-in" ? "Sign In" : "Sign Up"}</h1>
@@ -146,7 +146,3 @@ return (
 };
 
 export default AuthForm;
-function createAccount(arg0: { fullName: string; email: string }) {
-  throw new Error("Function not implemented.")
-}
-
