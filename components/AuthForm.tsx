@@ -62,8 +62,6 @@ const onSubmit = async (values: z.infer<typeof formSchema>) => {
     } finally {
       setIsLoading(false)
     }
-
-
 }
 
 return (
@@ -75,7 +73,7 @@ return (
         {type === 'sign-up' && 
         <FormField
           control={form.control}
-          name="username"
+          name="fullName"
           render={({ field }) => (
             <FormItem>
               <div className="shad-form-item">
