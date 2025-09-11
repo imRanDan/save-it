@@ -17,12 +17,36 @@ import {
     InputOTPSlot,
 } from "@/components/ui/input-otp"
 
+import { useState } from "react";
+
 import { Button } from "@/components/ui/button"
 
 const OTPModal = () => {
+  const [isOpen, setIsOpen] = useState(true);
+  const [password, setPassword] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      //call the api to verify otp
+
+    } catch (error) {
+      console.log('Failed to verify OTP',error)
+    }
+
+    setIsLoading(false)
+  }
+
+  const handleResendOtp = async () => {
+
+  }
+
   return (
-  <AlertDialog>
-      <AlertDialogTrigger asChild>
+  <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
+      <AlertDialogTrigger>
         <Button variant="outline">Show Dialog</Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
