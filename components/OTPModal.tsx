@@ -41,7 +41,7 @@ const OTPModal = () => {
   }
 
   const handleResendOtp = async () => {
-
+    //call the api here to resend the otp
   }
 
   return (
