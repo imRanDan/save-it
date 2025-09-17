@@ -34,7 +34,7 @@ const OTPModal = ({ accountId, email}: {accountId: string; email: string} ) => {
 
     try {
       //call the api to verify otp
-
+      
     } catch (error) {
       console.log('Failed to verify OTP',error)
     }
@@ -78,8 +78,36 @@ const OTPModal = ({ accountId, email}: {accountId: string; email: string} ) => {
     </InputOTP>
 
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
+          <div className="flex w-full flex-col gap-4">
+          <AlertDialogAction 
+            onClick={handleSubmit} 
+            className="shad-submit-btn h-12" 
+            type="button"
+          >
+              Submit
+              {isLoading && (
+                <Image
+                src="/assets/icons/loader.svg"
+                alt="loader"
+                width={24}
+                height={24}
+                className="ml-2 animate-spin"
+                />
+              )}
+          </AlertDialogAction>
+
+          <div className="subtitle-2 mt-2 text-center text-light-100">
+            Didn&apos;t get a code?
+            <Button 
+              type="button" 
+              variant="link" 
+              className="pl-1 text-brand"
+              onClick={handleResendOtp}
+            >
+
+            </Button>
+          </div>
+          </div>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
