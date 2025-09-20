@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
         hostname: "cdn.pixabay.com",
       },
       {
-        protocol: "https",
+         protocol: "https",
         hostname: "img.freepik.com",
       },
       {

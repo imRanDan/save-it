@@ -56,8 +56,7 @@ export const createAccount = async ({
                 {
                     fullName,
                     email,
-                    avatar:
-                    "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
+                    avatar:"https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541",
                     accountId,
                 },
             )
