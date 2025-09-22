@@ -15,6 +15,7 @@ import { Separator } from "@/components/ui/separator"
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { navItems } from "@/constants";
+import { Button } from "./ui/button";
 
 interface Props {
   ownerId: string;
@@ -89,6 +90,23 @@ const MobileNavigation = ({ ownerId, accountId, fullName, avatar, email}: Props)
                     ))}
           </ul>
         </nav>
+
+        <Separator className="my-5 bg-light-200/20"/>
+
+        <div className="flex flex-col justify-between gap-5 pb-5">
+              File Uploader
+
+              <Button type="submit" className="mobile-sign-out-button" onClick={() => {
+
+              }}>
+                <Image 
+                  src="/assets/icons/logout.svg"
+                  alt="logo"
+                  width={24}
+                  height={24}
+                />
+              </Button>
+        </div>
     </SheetContent>
   </Sheet>
   </header>
