@@ -120,3 +120,15 @@ export const signOutUser = async () => {
         redirect('/sign-in')
     }
 }
+
+export const signInUser = async ({ email}: {email: string}) => {
+    try {
+        const existingUser = await getUserByEmail(email);
+
+        if(existingUser) {
+            return sendEmailOTP({ email });
+        }
+    } catch (error) {
+        handleError(error, "Failed to sign in user");
+    }
+}
