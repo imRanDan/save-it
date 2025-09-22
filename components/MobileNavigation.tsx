@@ -11,6 +11,10 @@ import {
 } from "@/components/ui/sheet"
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { Separator } from "@/components/ui/separator"
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { navItems } from "@/constants";
 
 interface Props {
   ownerId: string;
@@ -56,11 +60,35 @@ const MobileNavigation = ({ ownerId, accountId, fullName, avatar, email}: Props)
                 <p className="caption">{email}</p>
               </div>
           </div>
+          <Separator className="mb-4 bg-light-200/20" />
         </SheetTitle>
-        <SheetDescription>
-          This action cannot be undone. This will permanently delete your account
-          and remove your data from our servers.
-        </SheetDescription>
+        
+        <nav className="mobile-nav">
+          <ul className="mobile-nav-list">
+            {navItems.map(({url, name, icon}) => (
+                    <Link key={name} href={url} className="lg:w-full">
+                        <li 
+                            className={cn(
+                                "mobile-nav-item", 
+                                pathname === url && "shad-active",
+                                )}
+                            >
+                            <Image 
+                                src={icon} 
+                                alt={name} 
+                                width={24} 
+                                height={24} 
+                                className={cn(
+                                    "nav-icon", 
+                                    pathname === url && 'nav-icon-active',
+                                )}
+                            />
+                            <p>{name}</p>
+                        </li>
+                    </Link>
+                    ))}
+          </ul>
+        </nav>
     </SheetContent>
   </Sheet>
   </header>
