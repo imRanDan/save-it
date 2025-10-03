@@ -127,6 +127,7 @@ export const signInUser = async ({ email}: {email: string}) => {
 
         if(existingUser) {
             return sendEmailOTP({ email });
+            return parseStringify({ accountId: existingUser.accountId})
         }
     } catch (error) {
         handleError(error, "Failed to sign in user");
